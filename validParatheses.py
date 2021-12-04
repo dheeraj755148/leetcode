@@ -10,7 +10,7 @@ def valid(x):
         return "false" 
 print(valid(x)) """
 
-def isValid(s):
+""" def isValid(s):
     stack = []
     dict = {"]":"[", "}":"{", ")":"("}
     for char in s:
@@ -24,4 +24,26 @@ def isValid(s):
             return False
     return stack == []
 
-print(isValid(")("))
+print(isValid(")(")) """
+
+def valid(s):
+    stack = []
+    ans =[]
+    for i in range(len(s)):
+        if (s[i]=="(") or (s[i]=="[") or (s[i]=="{"):
+            stack.append(s[i])
+            print(stack)
+        else:
+            if(len(stack)==0):
+                return False
+            else:
+                temp = stack.pop()
+                print(temp)
+                if (s[i]==")" and temp == "(") or (s[i]=="]" and temp == "[") or (s[i]=="}" and temp == "{"):
+                    ans.append(True)
+                else:
+                    return False
+    if len(stack) == 0:
+        return True
+
+print(valid("(){}}{"))    
