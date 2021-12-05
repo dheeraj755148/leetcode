@@ -46,4 +46,4 @@ def valid(s):
     if len(stack) == 0:
         return True
 
-print(valid("(){}}{"))    
+print(valid("(()]"))    
