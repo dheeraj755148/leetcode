@@ -1,5 +1,5 @@
 #kadanes algorithm
-nums = [5,4,-1,7,8]
+nums = [-3,2,-1,10]
 currentSum = nums[0]
 maxSum = currentSum
 
