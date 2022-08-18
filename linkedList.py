@@ -1,30 +1,49 @@
+# https://www.geeksforgeeks.org/linked-list-set-1-introduction/
+
 class Node:
-    def __init__(self,data):
+    def __init__(self, data):
         self.data = data
-        self.link = None
+        self.next = None
 
 
 class LinkedList:
     def __init__(self):
         self.head = None
     
-    def print_ll(self):
-        if self.head is None:
-            print("LL is empty")
-        else:
-            n = self.head
-            while(n!=None):
-                print("<---",n.data,end="")
-                n= n.ref
-    def add(self,data):
+    def printData(self):
+        temp = self.head
+        while(temp):
+            print(str(temp.data)+"--->",end="")
+            temp = temp.next
+        print("")
+
+    def pushToFront(self,data):
         new_node = Node(data)
-        new_node.ref = self.head
+        new_node.next = self.head
         self.head = new_node
 
-LL = LinkedList()
-LL.print_ll()
-LL.add(10)
-LL.add(20)
-LL.add(30)
-LL.add(40)
-LL.print_ll()
+    def pushToBack(self,data):
+        new_node = Node(data)
+        temp = self.head
+        while(temp.next):
+            temp = temp.next
+        temp.next = new_node
+
+            
+
+ll = LinkedList()
+ll.head = Node(1)
+second = Node(2)
+third = Node(3)
+
+ll.head.next = second
+second.next = third
+ll.printData()
+
+ll.pushToFront(10)
+
+ll.printData()
+
+ll.pushToBack(11)
+
+ll.printData()

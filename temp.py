@@ -1,53 +1,17 @@
-""" def findTarget(a,n):
-    if(0<=a[0]):
-        return a[0]
-    if(0>=a[n-1]):
-        return a[n-1]
-    low = 0
-    high = n
-    mid = 0
+a ='''
+Coronavirus disease (COVID-19) is an infectious disease caused by the SARS-CoV-2 virus.
 
-    while(low<high):
-        mid = (low+high)//2
-        if(a[mid]==0):
-            return a[mid]
-        
-        if(0<a[mid]):
-            if(mid>0 and 0>a[mid-1]):
-                return getClose(a[mid-1],a[mid])
-            high =mid
-        else:
-            if(mid<n-1 and 0<a[mid+1]):
-                return getClose(a[mid],a[mid+1])
-            low = mid+1
-    return mid+1
+Most people infected with the virus will experience mild to moderate respiratory illness and recover without requiring special treatment. However, some will become seriously ill and require medical attention. Older people and those with underlying medical conditions like cardiovascular disease, diabetes, chronic respiratory disease, or cancer are more likely to develop serious illness. Anyone can get sick with COVID-19 and become seriously ill or die at any age. 
 
-def getClose(val1,val2):
-    if(0-val1 >=val2-0):
-        return val2
+The best way to prevent and slow down transmission is to be well informed about the disease and how the virus spreads. Protect yourself and others from infection by staying at least 1 metre apart from others, wearing a properly fitted mask, and washing your hands or using an alcohol-based rub frequently. Get vaccinated when it’s your turn and follow local guidance.'''
+
+temp = {}
+words = a.split()
+for i in words:
+    if i in temp:
+        temp[i] +=1
     else:
-        return val1
-
-a = [0,2,3,4,5]
-a.sort()
-n = len(a)
-
-print(findTarget(a,n)) """
+        temp[i] = 1
 
 
-
-
-
-""" a=[0,4,0,0,1,3,4,1,0,2]
-t=a[:]
-a.sort()
-good = 0
-bad = 0
-for i in range(len(a)):
-    if(t[i]==a[i]):
-        good += t[i]
-    else:
-        bad += t[i]
-print(good-bad) """
-
-
+print(temp)
